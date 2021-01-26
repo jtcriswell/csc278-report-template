@@ -1,0 +1,56 @@
+%-------------------------------------------------------------------------------
+\section{Mitigations}
+\label{section:mitigate}
+%-------------------------------------------------------------------------------
+
+\begin{table*}[htb]
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\emph{Mitigation} & \emph{Method} & \emph{Cost} \\
+\hline
+File configuration & Prevnetion & Practically none \\
+\hline
+Code Review & Prevention & Human effort linear to code size \\
+\hline
+\end{tabular}
+\caption{Mitigation Summary}
+\label{table:mitigate}
+\end{center}
+\end{table*}
+
+We will deploy several mitigations summarized in Table~\ref{table:mitigate}.
+
+\subsection{Configuration File Attributes}
+
+We will configure the /etc/rac.conf file to be owned by root with
+owner, group, and world write access disabled
+
+\begin{itemize}
+  \item{\textbf{Security Risks Mitigated}:}
+  Misconfiguration of the /etc/rac.conf file
+
+  \item{\textbf{Method}:}
+  Prevention
+
+  \item{\textbf{Cost}:}
+  No run-time cost; practically no install-time cost
+\end{itemize}
+
+\subsection{Code Review}
+
+We will review the code very, very, very, very closely to identify buffer
+overflows.  We will review code periodically during development with a final
+code review prior to final submission.
+
+\begin{itemize}
+  \item{\textbf{Security Risks Mitigated}:}
+  Buffer overflows
+
+  \item{\textbf{Method}:}
+  Prevention
+
+  \item{\textbf{Cost}:}
+  Linear to size of source code.   We estimate one hour of developer time for
+  every 1,000 source lines of code.
+\end{itemize}

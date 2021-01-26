@@ -1,0 +1,16 @@
+%-------------------------------------------------------------------------------
+\section{Security Risks}
+\label{section:risks}
+%-------------------------------------------------------------------------------
+
+We identify several security risks to the RA Contract program:
+
+\begin{itemize}
+  \item{\textbf{Misconfiguration of attributes of the /etc/rac.conf file}:}
+  Incorrect permissions of the /etc/rac.conf file may permit unauthorized
+  modifications, allowing stu-dents to grade their own RA contracts.
+
+  \item{\textbf{Buffer overflows}:}
+  A buffer overflow~\cite{AlephOne:StackSmash} in our RA Contract program may
+  allow a user to violate the se-curity policy in arbitrary ways.
+\end{itemize}

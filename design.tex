@@ -1,0 +1,18 @@
+%-------------------------------------------------------------------------------
+\section{Introduction}
+\label{section:intro}
+%-------------------------------------------------------------------------------
+
+In this section, we will present our proposed design of the RA Contract program.
+
+\subsection{Implementation Language}
+
+We will implement our rac program in C.  The C compiler is available on the CSUG machines and is widely used in indus-try.  While using C poses some security risks (described in Section 3), its ubiquitous use ensures that other software developers will be able to maintain and enhance the software once we are done with the project.  Furthermore, the devel-opment toolset for C e.g., compilers, is well-used and likely to see continued use and maintenance well into the future.
+
+\subsection{Configuration Files}
+ Our rac program will use the file /etc/rac.conf to store infor-mation on which faculty advise which students.  This file will be a text file.  Each line will contain an adviser username, fol-lowed by a colon, followed by a comma-separated list of stu-dent usernames.  This file should only be modified manually by a system administrator.
+
+\subsection{Database Design}
+Our rac program will use a simple strategy to store infor-mation.  It will use two directories.  The first,  /home/rac/contracts, will store RA contracts.  Each student will have a subdirectory in /home/rac/contracts, and a file within that directory will contain the student’s contract for that semester.  The rac -submit <filename> command will copy the contents of filename into a file in the student’s di-rectory.
+The second directory, /home/rac/grades, will contain a subdi-rectory for each student.  Within each student’s directory will be a file containing information on whether the advisor has approved the student’s RA contract.  Additionally, another file within this directory will contain the student’s grade.
+
